@@ -1,0 +1,31 @@
+<div class="insights">
+     <div class="insight-description">
+          <div class="auth-container">
+               <div class="auth-form">
+                    <h2 class="auth-title">Create Group</h2>
+                    <form #groupForm="ngForm" (ngSubmit)="createGroup(groupForm)">
+                         <div class="form-group">
+                              <label for="groupName">Group Name<span class="red-mark">*</span></label>
+                              <input id="groupName" type="text" class="form-control" [(ngModel)]="groupName"
+                                   name="groupName" required placeholder="Enter Group Name" #groupNameField="ngModel">
+                         </div>
+                         <div *ngIf="groupNameField.invalid && groupNameField.touched" class="text-danger">
+                              <span *ngIf="groupNameField.errors?.['required']">Username is required.</span>
+                         </div>
+                         <div class="form-group">
+                              <label for="description">Description<span class="red-mark">*</span></label>
+                              <input id="description" type="text" class="form-control" [(ngModel)]="description"
+                                   name="description" required minlength="6" placeholder="Enter your password"
+                                   #descriptionField="ngModel">
+                         </div>
+                         <div *ngIf="descriptionField.invalid && descriptionField.touched" class="text-danger">
+                              <span *ngIf="descriptionField.errors?.['required']">Password is required.</span>
+                         </div>
+                         <button type="submit" class="btn btn-primary btn-block" [disabled]="groupForm.invalid">
+                              Create Group
+                         </button>
+                    </form>                  
+               </div>
+          </div>
+     </div>
+</div>

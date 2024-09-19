@@ -1,0 +1,23 @@
+
+   .btn {
+     padding: 10px 15px;
+     font-size: 1.1rem;
+     width: 100%;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+   }  
+   .auth-links {
+     text-align: center;
+     margin-top: 10px;
+   }
+   
+   .auth-links a {
+     color: #007bff;
+     text-decoration: none;
+   }
+   
+   .auth-links a:hover {
+     text-decoration: underline;
+   }
+   

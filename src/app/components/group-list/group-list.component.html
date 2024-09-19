@@ -1,0 +1,29 @@
+
+<div class="insights">
+  <div class="insight-description">
+    <div class="container">
+      <div class="button-container">
+        <button pButton type="button" class="btn-primary" icon="pi pi-plus" label="Create Group" (click)="createGroup()"></button>
+        <button pButton type="button" class="btn-primary" icon="pi pi-user-plus" label="Add Member" (click)="addMember()"></button>
+        <button pButton type="button" class="btn-primary" icon="pi pi-user-plus" label="Add Expenses" (click)="addExpenses()"></button>
+      </div>
+
+      <p-table [value]="groups" [(selection)]="selectedGroup" [paginator]="true" [rows]="10" selectionMode="single" dataKey="id">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>ID</th>
+            <th>Group Name</th>
+            <th>Description</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-group>
+          <tr [pSelectableRow]="group">
+            <td>{{ group.id }}</td>
+            <td>{{ group.groupName }}</td>
+            <td>{{ group.description || 'N/A' }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
